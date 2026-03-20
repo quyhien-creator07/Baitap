@@ -1,0 +1,200 @@
+<<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ancient Architecture</title>
+    <style>
+       <style>
+        /* CSS Reset cơ bản */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #e6dfb8; /* Màu nền vàng nhạt/khaki */
+            font-family: Arial, sans-serif;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* Phần Header và Điều hướng */
+        header {
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        nav ul {
+            list-style-type: none;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #000;
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+        h1.main-title {
+            font-family: "Comic Sans MS", cursive, sans-serif; /* Font chữ cách điệu giống trong ảnh */
+            font-size: 36px;
+            margin-bottom: 20px;
+            font-weight: normal;
+        }
+
+        .hero-image-container {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .hero-image-container img {
+            max-width: 80%;
+            height: auto;
+            border: 5px solid #fff;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        /* Phần Nội dung 3 cột */
+        .content-section {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px 40px 20px;
+        }
+
+        article {
+            flex: 1;
+            background-color: transparent;
+        }
+
+        article h2 {
+            font-size: 18px;
+            margin-bottom: 5px;
+        }
+
+        .meta-info {
+            font-size: 12px;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        .meta-info .author {
+            color: blue;
+        }
+
+        article img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            margin-bottom: 15px;
+            border: 2px solid #fff;
+        }
+
+        /* Chữ cái đầu tiên viết hoa và to lên (Drop Cap) */
+        article p {
+            text-align: justify;
+            font-size: 13px;
+            margin-bottom: 20px;
+        }
+
+        article p::first-letter {
+            font-size: 3em;
+            float: left;
+            margin-right: 5px;
+            line-height: 1;
+            font-family: "Times New Roman", Times, serif;
+        }
+
+        /* Các nút bấm */
+        .buttons {
+            display: flex;
+            gap: 10px;
+        }
+
+        .btn {
+            background-color: #8b6b22; /* Màu nâu vàng */
+            color: #fff;
+            text-decoration: none;
+            padding: 8px 15px;
+            font-size: 12px;
+            font-weight: bold;
+            display: inline-flex;
+            align-items: center;
+        gap: 5px;
+            border-radius: 2px;
+        }
+        
+        .btn-comment::before {
+            content: "💬"; /* Icon comment đơn giản */
+            font-size: 14px;
+        }
+
+    </style>
+  
+</head>
+<body>
+
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Blog</a></li>
+                <li><a href="#">Portfolio</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">History</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+        <h1 class="main-title">Ancient Architecture</h1>
+        
+        <div class="hero-image-container">
+            <img src="/week 6/ảnh ai cập.webp" alt="Ancient Pyramid">
+        </div>
+    </header>
+
+    <main class="content-section">
+        <article>
+            <h2>Ancient Roman architecture</h2>
+            <div class="meta-info">Posted on 01.01.2017 by <span class="author">Someone</span></div>
+            <img src="https://images.unsplash.com/photo-1552832230-c0197dd311b5?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60" alt="Colosseum">
+            <p>Ancient Roman architecture adopted the external language of classical Greek architecture for the purposes of the ancient Romans, but grew so different from Greek buildings as to become a new architectural style. The two styles are often considered one body of classical architecture. Roman architecture flourished in the Roman Republic and even more so under the Empire, when the great majority of surviving buildings were constructed. It used new materials, particularly concrete, and newer technologies such as the arch and the dome to make buildings that were typically strong and well-engineered. Large numbers remain in some form across the empire, sometimes complete and still in use.</p>
+            <div class="buttons">
+                <a href="#" class="btn btn-comment">0 COMMENTS</a>
+                <a href="#" class="btn">VIEW POST</a>
+            </div>
+        </article>
+
+        <article>
+            <h2>Ancient Greek architecture</h2>
+            <div class="meta-info">Posted on 01.01.2017 by <span class="author">Someone</span></div>
+            <img src="https://images.unsplash.com/photo-1555993539-1732b0258235?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60" alt="Parthenon">
+            <p>The architecture of ancient Greece is the architecture produced by the Greek-speaking people (Hellenic people) whose culture flourished on the Greek mainland, the Peloponnese, the Aegean Islands, and in colonies in Anatolia and Italy for a period from about 900 BC until the 1st century AD, with the earliest remaining architectural works dating from around 600 BC. Ancient Greek architecture is best known from its temples, many of which are found throughout the region, mostly as ruins but many substantially intact. The second important type of building that survives all over the Hellenic world is the open-air theatre, with the earliest dating from around 525-480 BC.</p>
+            <div class="buttons">
+                <a href="#" class="btn btn-comment">0 COMMENTS</a>
+                <a href="#" class="btn">VIEW POST</a>
+            </div>
+        </article>
+
+        <article>
+            <h2>Ancient Indian Architecture</h2>
+            <div class="meta-info">Posted on 01.01.2017 by <span class="author">Someone</span></div>
+            <img src="https://images.unsplash.com/photo-1587595431973-160d0d94add1?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60" alt="Ancient Indian Architecture">
+            <p>Indian architecture is as old as the history of the civilization. The earliest remains of recognizable building activity in the India dates back to the Indus Valley cities. Among India's ancient architectural remains, the most characteristic are the temples, Chaityas, Viharas, Stupas and other religious structures. In ancient India, temple architecture of high standard developed in almost all regions. The distinct architectural style of temple construction in different parts was a result of geographical, climatic, ethnic, racial, historical and linguistic diversities. The Rock-cut structures present the most spectacular piece of ancient Indian art specimen. Most of the rock-cut structures were related to various religious communities.</p>
+            <div class="buttons">
+                <a href="#" class="btn btn-comment">0 COMMENTS</a>
+                <a href="#" class="btn">VIEW POST</a>
+            </div>
+        </article>
+    </main>
+
+</body>
+</html>
