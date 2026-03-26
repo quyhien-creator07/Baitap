@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Real Madrid vs Atlético Madrid</title>
+    <link rel="stylesheet" href="bongda1.css">
+</head>
+<body>
+
+<div class="container">
+
+    <h1>⚽ Real Madrid vs Atlético Madrid</h1>
+
+    <!-- Score -->
+    <h2 id="score">3 - 1</h2>
+
+    <!-- Video -->
+    <iframe id="videoFrame"
+        src="https://www.youtube.com/embed/H22-ry7R-po"
+        allowfullscreen>
+    </iframe>
+
+    <!-- Danh sách bàn thắng -->
+    <h2>📸 Bàn thắng</h2>
+    <div class="goals">
+
+        <div class="goal" onclick="showGoal(0)">
+            ⚽ 10' Real Madrid
+        </div>
+
+        <div class="goal" onclick="showGoal(1)">
+            ⚽ 35' Atlético Madrid
+        </div>
+
+        <div class="goal" onclick="showGoal(2)">
+            ⚽ 67' Real Madrid
+        </div>
+
+        <div class="goal" onclick="showGoal(3)">
+            ⚽ 85' Real Madrid
+        </div>
+
+    </div>
+
+    <!-- Ảnh bàn thắng -->
+    <div class="goal-image">
+        <img id="goalImg" src="" alt="Goal Image">
+    </div>
+
+</div>
+
+<script src="dabong.js"></script>
+</body>
+</html>

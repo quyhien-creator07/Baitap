@@ -1,0 +1,241 @@
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4; 
+}
+
+.container {
+    width: 900px;
+    margin: 0 auto;
+    background-color: #ffffff; 
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+}
+#header {
+    background: url('https://i.pinimg.com/736x/ba/3d/f2/ba3df20a8563cbf14968c15d5742f59d.jpg') no-repeat center;
+    background-size: cover;
+    height: 181px;
+    position: relative;
+}
+
+#logo {
+    padding: 20px 0 0 50px;
+}
+
+#menu_top {
+    margin-top: 55px;
+    margin-left: 30px;
+    background: rgba(255, 255, 255, 0.7);
+    height: 40px;
+    border-radius: 10px 0px 0px 10px;
+}
+
+.level1 {
+    list-style-type: none;
+    padding-top: 12px;
+    margin: 0;
+    padding-left: 20px;
+}
+
+.level1 > li {
+    display: inline;
+    float: left;
+    padding: 0px 20px 0px 0px;
+    height: 27px;
+    font-weight: bold;
+    position: relative;
+}
+
+.level1 li a {
+    color: #cc0000;
+    text-decoration: none;
+}
+
+.level1 li a:hover {
+    color: green;
+}
+
+.level2 {
+    display: none;
+    position: absolute;
+    padding: 0px;
+    margin-top: 5px;
+    left: 0;
+    top: 25px;
+    width: 140px;
+    list-style-type: none;
+    z-index: 10;
+}
+
+.level1 li:hover > .level2 {
+    display: block;
+}
+
+.level2 li {
+    display: block;
+    padding: 10px 15px;
+    background: #e0e0e0;
+    color: #333;
+    font-size: 14px;
+    font-weight: normal;
+}
+
+.level2 li:hover {
+    background: #e6e655;
+    cursor: pointer;
+}
+
+.welcome-bar {
+    border-top: 2px dotted #99cc33;
+    border-bottom: 2px dotted #99cc33;
+    padding: 8px 15px;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.main-content {
+    display: flex;
+    padding: 10px 0;
+}
+
+.col-left {
+    width: 50%; 
+    padding: 0 15px;
+}
+
+.col-middle {
+    width: 25%; 
+    padding: 0 15px;
+    border-left: 1px dashed #ccc;
+    border-right: 1px dashed #ccc;
+}
+
+.col-right {
+    width: 25%; 
+    padding: 0 15px;
+}
+
+.section-title {
+    color: #cc0000;
+    font-size: 18px;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.icon-red { color: #d93838; }
+.icon-blue { color: #388ed9; }
+.icon-orange { color: #d99638; }
+
+.product-item {
+    display: flex;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px dashed #ccc;
+}
+
+.product-item img {
+    width: 120px;
+    height: auto;
+    object-fit: contain;
+    margin-right: 15px;
+}
+
+.product-desc {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 10px;
+    flex: 1;
+}
+
+.product-desc h3 {
+    margin: 0 0 10px 0;
+    color: #cc0000;
+    font-size: 16px;
+}
+
+.product-desc p {
+    margin: 0;
+    font-size: 13px;
+    line-height: 1.5;
+    color: #333;
+}
+
+
+.promo-item {
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.promo-item p {
+    margin: 0 0 5px 0;
+    color: #555;
+    font-size: 14px;
+}
+
+.promo-item .img-box {
+    border: 1px solid #ddd;
+    padding: 5px;
+    border-radius: 5px;
+    display: inline-block;
+}
+
+.promo-item img {
+    width: 100px;
+    height: auto;
+}
+
+
+.catalog-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.catalog-list li {
+    padding: 8px 0;
+}
+
+.catalog-list li a {
+    text-decoration: none;
+    color: #333;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.catalog-list li a:before {
+    content: "» ";
+    color: #999;
+}
+
+.catalog-list li a:hover {
+    color: #cc0000;
+}
+
+#footer {
+    border-top: 1px dashed #ccc;
+    margin-top: 20px;
+}
+
+.footer-top {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 30px;
+}
+
+.company-info p {
+    margin: 3px 0;
+    font-size: 12px;
+    color: #666;
+}
+
+.footer-logo-text {
+    font-size: 24px;
+    color: #ccc;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.footer-bottom-pattern {
+    height: 30px;
+    background: url('https://i.ibb.co/3s6K8fV/footer-pattern.jpg') repeat-x bottom;
+}

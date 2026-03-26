@@ -1,0 +1,60 @@
+body {
+    background: #0b0f1a;
+    color: white;
+    font-family: Arial;
+    text-align: center;
+}
+
+.container {
+    width: 80%;
+    margin: auto;
+}
+
+.scoreboard {
+    display: flex;
+    justify-content: space-around;
+    background: #111827;
+    padding: 15px;
+    border-radius: 10px;
+    font-size: 20px;
+}
+
+#score {
+    font-size: 30px;
+    color: #facc15;
+}
+
+iframe {
+    width: 100%;
+    height: 400px;
+    margin-top: 20px;
+    border-radius: 10px;
+}
+
+#events {
+    margin-top: 20px;
+}
+
+.event {
+    background: #1f2937;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.event:hover {
+    background: #374151;
+}
+
+/* Hiệu ứng goal */
+.goal {
+    background: #16a34a !important;
+    animation: flash 0.5s alternate 4;
+}
+
+@keyframes flash {
+    from {opacity: 1;}
+    to {opacity: 0.5;}
+}
