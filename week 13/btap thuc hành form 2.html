@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Personal Information Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            padding-top: 50px;
+        }
+        fieldset {
+            width: 500px;
+            border: 1px solid #ccc;
+            padding: 20px;
+        }
+        legend {
+            color: blue;
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+        table {
+            width: 100%;
+        }
+        td {
+            padding: 5px;
+            vertical-align: middle;
+        }
+        .label-cell {
+            width: 130px;
+            text-align: left;
+        }
+        input[type="text"], 
+        input[type="password"], 
+        input[type="email"], 
+        input[type="tel"],
+        textarea {
+            width: 250px;
+            padding: 3px;
+            border: 1px solid #999;
+        }
+        textarea {
+            height: 60px;
+            resize: none;
+        }
+        .range-container {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            width: 250px;
+        }
+        input[type="range"] {
+            flex-grow: 1;
+        }
+        .buttons {
+            padding-top: 15px;
+            text-align: left;
+            padding-left: 135px;
+        }
+        input[type="submit"], input[type="reset"] {
+            padding: 2px 15px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+<form>
+    <fieldset>
+        <legend>Personal Information</legend>
+        <table>
+            <tr>
+                <td class="label-cell">Title</td>
+                <td><input type="text" name="title" style="width: 100px;"></td>
+            </tr>
+            <tr>
+                <td class="label-cell">User name</td>
+                <td><input type="text" name="username"></td>
+            </tr>
+            <tr>
+                <td class="label-cell">Password</td>
+                <td><input type="password" name="password"></td>
+            </tr>
+            <tr>
+                <td class="label-cell">Address</td>
+                <td><textarea name="address"></textarea></td>
+            </tr>
+            <tr>
+                <td class="label-cell">Education</td>
+                <td>
+                    <div class="range-container">
+                        <span>0</span>
+                        <input type="range" min="0" max="12" value="2">
+                        <span>12</span>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td class="label-cell">Email</td>
+                <td><input type="email" name="email"></td>
+            </tr>
+            <tr>
+                <td class="label-cell">BirthDay</td>
+                <td><input type="date" name="birthday"></td>
+            </tr>
+            <tr>
+                <td class="label-cell">Time</td>
+                <td><input type="time" name="time" style="width: 100px;"></td>
+            </tr>
+            <tr>
+                <td class="label-cell">Telephone</td>
+                <td><input type="tel" name="phone"></td>
+            </tr>
+            <tr>
+                <td class="label-cell">Favourite color:</td>
+                <td><input type="color" name="favcolor" value="#000000"></td>
+            </tr>
+            <tr>
+                <td colspan="2" class="buttons">
+                    <input type="submit" value="Submit">
+                    <input type="reset" value="Reset">
+                </td>
+            </tr>
+        </table>
+    </fieldset>
+</form>
+
+</body>
+</html>
