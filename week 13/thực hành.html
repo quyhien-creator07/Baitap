@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Registration Form</title>
+    <style>
+        body { font-family: Arial, sans-serif; color: #333; }
+        .container { width: 600px; margin: 20px auto; }
+        h3 { color: #800000; text-transform: uppercase; border-bottom: 2px solid #ccc; padding-bottom: 5px; }
+        table { width: 100%; border-collapse: collapse; }
+        td { padding: 8px 5px; vertical-align: middle; }
+        .label { color: #305496; width: 150px; }
+        hr { border: 0; border-top: 1px solid #ccc; margin: 15px 0; }
+        input[type="text"], input[type="password"] { width: 250px; padding: 3px; border: 1px solid #7F9DB9; }
+        .small-input { width: 60px !important; }
+        .btn-register {
+            background: linear-gradient(to bottom, #d32f2f, #800000);
+            color: white;
+            padding: 10px 30px;
+            border: 2px solid #fff;
+            border-radius: 20px;
+            font-weight: bold;
+            font-size: 16px;
+            cursor: pointer;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+            display: block;
+            margin: 20px auto;
+        }
+        .interests-label { color: #305496; margin-bottom: 10px; }
+        .interest-item { color: #305496; font-size: 14px; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h3>Registration</h3>
+
+    <form>
+        <table>
+            <tr>
+                <td class="label">Username:</td>
+                <td><input type="text" name="username"></td>
+            </tr>
+            <tr>
+                <td class="label">Password:</td>
+                <td><input type="password" name="password"></td>
+            </tr>
+            <tr>
+                <td class="label">Re-type Password:</td>
+                <td><input type="password" name="repassword"></td>
+            </tr>
+        </table>
+
+        <hr>
+
+        <table>
+            <tr>
+                <td class="label">Birthday:</td>
+                <td>
+                    <select>
+                        <option>[select one]</option>
+                        <option>January</option>
+                        <option>February</option>
+                        <!-- Thêm các tháng khác tại đây -->
+                    </select> ,
+                    <input type="text" class="small-input"> ,
+                    <input type="text" class="small-input">
+                    <span style="color: #305496; font-size: 12px;">(Month Day, Year)</span>
+                </td>
+            </tr>
+            <tr>
+                <td class="label">Images:</td>
+                <td><input type="file"></td>
+            </tr>
+        </table>
+
+        <hr>
+
+        <table>
+            <tr>
+                <td class="label">First Name:</td>
+                <td><input type="text" style="width: 130px;"></td>
+                <td class="label" style="width: 80px;">Last Name:</td>
+                <td><input type="text" style="width: 150px;"></td>
+            </tr>
+        </table>
+
+        <hr>
+
+        <div class="interests-label">Interests (optional):</div>
+        <table style="margin-left: 100px;">
+            <tr>
+                <td><input type="checkbox"> <span class="interest-item">Entertainment</span></td>
+                <td><input type="checkbox"> <span class="interest-item">Business</span></td>
+            </tr>
+            <tr>
+                <td><input type="checkbox"> <span class="interest-item">Home & Family</span></td>
+                <td><input type="checkbox"> <span class="interest-item">Computers & Technology</span></td>
+            </tr>
+            <tr>
+                <td><input type="checkbox"> <span class="interest-item">Health</span></td>
+                <td><input type="checkbox"> <span class="interest-item">Personal Finance</span></td>
+            </tr>
+            <tr>
+                <td><input type="checkbox"> <span class="interest-item">Music</span></td>
+                <td><input type="checkbox"> <span class="interest-item">Small Business</span></td>
+            </tr>
+        </table>
+
+        <hr>
+
+        <button type="submit" class="btn-register">REGISTER</button>
+    </form>
+</div>
+
+</body>
+</html>
