@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Application Form</title>
+    <style>
+        body { font-family: "Times New Roman", Times, serif; }
+        .form-container {
+            width: 700px;
+            margin: 20px auto;
+            border: 1px solid #000080;
+            padding-bottom: 20px;
+        }
+        .header {
+            background-color: #000080;
+            color: white;
+            text-align: right;
+            padding: 10px 20px;
+            font-size: 24px;
+            font-style: italic;
+            font-weight: bold;
+            margin-bottom: 30px;
+        }
+        table {
+            width: 80%;
+            margin: 0 auto;
+            border-collapse: collapse;
+        }
+        td {
+            padding: 8px;
+            vertical-align: top;
+        }
+        .label {
+            text-align: right;
+            font-weight: bold;
+            width: 150px;
+            font-size: 18px;
+        }
+        input[type="text"], input[type="date"], select, textarea {
+            width: 100%;
+            padding: 4px;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+        }
+        textarea {
+            height: 80px;
+            resize: none;
+        }
+        .button-group {
+            text-align: center;
+            margin-top: 20px;
+        }
+        input[type="submit"], input[type="reset"] {
+            padding: 5px 15px;
+            margin: 0 5px;
+            cursor: pointer;
+        }
+        .checkbox-group, .radio-group {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            font-weight: bold;
+        }
+        input[type="checkbox"], input[type="radio"] {
+            margin-right: 5px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="form-container">
+    <div class="header">APPLICATION FORM</div>
+
+    <form>
+        <table>
+            <tr>
+                <td class="label">First Name :</td>
+                <td><input type="text" name="firstname"></td>
+            </tr>
+            <tr>
+                <td class="label">Birthday :</td>
+                <td><input type="date" name="birthday" value="2020-06-11"></td>
+            </tr>
+            <tr>
+                <td class="label">Education :</td>
+                <td class="checkbox-group">
+                    <label><input type="checkbox" name="edu"> Greduate</label>
+                    <label><input type="checkbox" name="edu"> Post Greduate</label>
+                </td>
+            </tr>
+            <tr>
+                <td class="label">Gender :</td>
+                <td class="radio-group">
+                    <label><input type="radio" name="gender"> Male</label>
+                    <label><input type="radio" name="gender"> Female</label>
+                </td>
+            </tr>
+            <tr>
+                <td class="label">Salary :</td>
+                <td><input type="text" name="salary"></td>
+            </tr>
+            <tr>
+                <td class="label">Remarks :</td>
+                <td><textarea placeholder="Type your text here"></textarea></td>
+            </tr>
+            <tr>
+                <td class="label">Country :</td>
+                <td>
+                    <select name="country" style="width: auto;">
+                        <option>Australia</option>
+                        <option>Vietnam</option>
+                        <option>USA</option>
+                    </select>
+                </td>
+            </tr>
+        </table>
+
+        <div class="button-group">
+            <input type="submit" value="SUBMIT">
+            <input type="reset" value="RESET">
+        </div>
+    </form>
+</div>
+
+</body>
+</html>
