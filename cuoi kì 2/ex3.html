@@ -1,0 +1,59 @@
+ <section id="exercise3">
+        <h2>Exercise 3: Student Grade Calculator</h2>
+        <table id="gradeTable">
+            <thead>
+                <tr>
+                    <th>Subject</th>
+                    <th>Grade (&ge; 0)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>Fintech Basics</td><td><input type="number" class="grade" value="85"></td></tr>
+                <tr><td>Probability & Statistics</td><td><input type="number" class="grade" value="90"></td></tr>
+                <tr><td>Blockchain Tech &reg;</td><td><input type="number" class="grade" value="88"></td></tr>
+                <tr><td>Web Development</td><td><input type="number" class="grade" value="92"></td></tr>
+            </tbody>
+        </table>
+        <button id="btnCalculate">Calculate Average</button>
+        <div id="averageResult" class="result"></div>
+        <p>Currency Symbol: &sect;</p>
+    </section>
+
+    <style> 
+        /* Table styles (Bài 3) */
+table { 
+    width: 100%; 
+    border-collapse: collapse; 
+    margin: 15px 0; 
+}
+
+table, th, td { 
+    border: 1px solid #bdc3c7; 
+}
+
+th, td { 
+    padding: 12px; 
+    text-align: left; 
+}
+
+/* Bài 3: Alternating row colors */
+#gradeTable tr:nth-child(even) { 
+    background-color: #f9f9f9; 
+}
+    </style>
+
+    <script>
+// Bài 3: Calculate Average sử dụng querySelectorAll()
+    const btnCalc = document.getElementById("btnCalculate");
+    btnCalc.addEventListener("click", function() {
+        const grades = document.querySelectorAll(".grade");
+        let sum = 0;
+        
+        grades.forEach(input => {
+            sum += parseFloat(input.value);
+        });
+
+        const avg = sum / grades.length;
+        document.getElementById("averageResult").innerText = "Average Grade: " + avg.toFixed(2);
+    });
+    </script>

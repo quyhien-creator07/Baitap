@@ -1,0 +1,82 @@
+ <section id="exercise4">
+        <h2>Exercise 4: Restaurant Menu Interface</h2>
+        <button id="btnFilter">Filter Menu (Veggie Only)</button>
+        
+        <div class="menu-category">Appetizers &reg;</div>
+        <div class="menu-item"><span>Spring Rolls</span> <span>&ge; $5.00</span></div>
+        <div class="menu-item vegetarian"><span>Garden Salad (Veg)</span> <span>&ge; $7.00</span></div>
+
+        <div class="menu-category">Main Course &sect;</div>
+        <div class="menu-item"><span>Beef Steak</span> <span>&ge; $25.00</span></div>
+        <div class="menu-item vegetarian"><span>Tofu Curry (Veg)</span> <span>&ge; $15.00</span></div>
+
+        <div class="menu-category">Desserts</div>
+        <div class="menu-item vegetarian"><span>Fruit Platter (Veg)</span> <span>&ge; $8.00</span></div>
+        
+        <div class="menu-category">Drinks</div>
+        <div class="menu-item"><span>Cold Brew Coffee</span> <span>&ge; $4.00</span></div>
+    </section>
+    <style>
+        * Bài 4: Menu Styles */
+.menu-category { 
+    margin-top: 20px; 
+    font-weight: bold; 
+    color: #e67e22; 
+}
+
+.menu-item { 
+    display: flex; /* Sử dụng Flexbox */
+    justify-content: space-between; 
+    padding: 8px 0; 
+    border-bottom: 1px dashed #ddd; 
+}
+
+.hidden { 
+    display: none; 
+}
+
+button { 
+    background-color: #3498db; 
+    color: white; 
+    border: none; 
+    padding: 10px 15px; 
+    border-radius: 4px; 
+    cursor: pointer; 
+}
+
+button:hover { 
+    background-color: #2980b9; 
+}
+
+.result { 
+    margin-top: 10px; 
+    font-weight: bold; 
+    color: #27ae60; 
+}
+    </style>
+
+<script> 
+    // Bài 4: Filter Menu sử dụng getElementsByClassName()
+    const btnFilter = document.getElementById("btnFilter");
+    let isFiltered = false;
+
+    btnFilter.addEventListener("click", function() {
+        const allItems = document.getElementsByClassName("menu-item");
+        isFiltered = !isFiltered;
+
+        for (let item of allItems) {
+            if (isFiltered) {
+                // Nếu không có class 'vegetarian' thì ẩn đi
+                if (!item.classList.contains("vegetarian")) {
+                    item.classList.add("hidden");
+                }
+            } else {
+                item.classList.remove("hidden");
+            }
+        }
+        
+        // Đổi text trên nút để người dùng dễ hiểu
+        this.innerText = isFiltered ? "Show All Items" : "Filter Menu (Veggie Only)";
+    });
+
+</script>

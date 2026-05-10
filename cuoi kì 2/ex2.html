@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Computer Parts Price List</title>
+    <style>
+        /* Yêu cầu 4: Style table with borders and padding */
+        table {
+            border-collapse: collapse; /* Gộp đường viền bảng */
+            width: 50%;
+            margin-bottom: 15px;
+            font-family: Arial, sans-serif;
+        }
+        
+        table, th, td {
+            border: 2px solid #333; /* Thêm borders */
+        }
+        
+        th, td {
+            padding: 10px; /* Thêm padding */
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        button {
+            padding: 10px 15px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Computer Parts Price List</h2>
+
+    <table id="myPartsTable">
+        <thead>
+            <tr>
+                <th>Part Name</th>
+                <th>Price</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Intel Core i9 Processor &trade;</td>
+                <td>$450 &bull;</td>
+            </tr>
+            <tr>
+                <td>NVIDIA RTX 4090 &copy;</td>
+                <td>$1600 &bull;</td>
+            </tr>
+            <tr>
+                <td>Corsair 64GB RAM &trade;</td>
+                <td>$200 &bull;</td>
+            </tr>
+            <tr>
+                <td>Samsung 2TB SSD &copy;</td>
+                <td>$150 &bull;</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <button onclick="changeColor()">Change Color</button>
+
+    <script>
+        // Yêu cầu 5: Use changeColor() function and getElementById()
+        function changeColor() {
+            // When clicked, changes all table text to red
+            const table = document.getElementById("myPartsTable");
+            table.style.color = "red";
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Registration Form</title>
+    <style>
+        /* 3. Style form with Flexbox layout */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f2f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .form-container {
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            width: 350px;
+        }
+
+        h2 {
+            text-align: center;
+            margin-top: 0;
+            color: #333;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px; /* Sử dụng Flexbox gap để tạo khoảng cách giữa các trường */
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+
+        label {
+            font-weight: bold;
+            color: #555;
+            font-size: 14px;
+        }
+
+        input[type="text"],
+        input[type="password"],
+        input[type="file"] {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+
+        input[type="text"]:focus,
+        input[type="password"]:focus {
+            border-color: #007bff;
+            outline: none;
+        }
+
+        button {
+            padding: 12px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        /* Password strength indicator styles */
+        #strength-text {
+            font-size: 13px;
+            font-weight: bold;
+            margin-top: -5px;
+        }
+        .weak { color: #dc3545; }   /* Đỏ */
+        .medium { color: #ffc107; } /* Vàng */
+        .strong { color: #28a745; } /* Xanh lá */
+    </style>
+</head>
+<body>
+
+    <div class="form-container">
+        <h2>Register</h2>
+        <form id="registrationForm">
+            <!-- 1. Username field -->
+            <div class="form-group">
+                <label for="username">Username</label>
+                <!-- 2. Username must be 5-15 characters -->
+                <input type="text" id="username" name="username" minlength="5" maxlength="15" required placeholder="5-15 characters">
+            </div>
+
+            <!-- 1. Password field -->
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" required placeholder="Must contain numbers & letters">
+                <!-- 4. Password strength indicator -->
+                <div id="strength-text">Strength: <span id="strength-level">None</span></div>
+            </div>
+
+            <!-- 1. Profile Picture field -->
+            <div class="form-group">
+                <label for="profile-pic">Profile Picture</label>
+                <!-- 2. Image file must be JPG or PNG -->
+                <input type="file" id="profile-pic" name="profile-pic" accept=".jpg, .jpeg, .png" required>
+            </div>
+
+            <button type="submit">Sign Up</button>
+        </form>
+    </div>
+
+    <script>
+        const passwordInput = document.getElementById('password');
+        const strengthLevel = document.getElementById('strength-level');
+        const form = document.getElementById('registrationForm');
+        const profilePicInput = document.getElementById('profile-pic');
+
+        // 4. Update password strength in real-time
+        passwordInput.addEventListener('input', function() {
+            const val = passwordInput.value;
+            let strength = 'None';
+            let className = '';
+
+            if (val.length > 0) {
+                const hasLetters = /[a-zA-Z]/.test(val);
+                const hasNumbers = /[0-9]/.test(val);
+                const hasSpecial = /[^a-zA-Z0-9]/.test(val);
+
+                // Logic đánh giá độ mạnh yếu
+                if (val.length < 6 || !(hasLetters && hasNumbers)) {
+                    strength = 'Weak';
+                    className = 'weak';
+                } else if (val.length >= 6 && hasLetters && hasNumbers && !hasSpecial) {
+                    strength = 'Medium';
+                    className = 'medium';
+                } else if (val.length >= 8 && hasLetters && hasNumbers && hasSpecial) {
+                    strength = 'Strong';
+                    className = 'strong';
+                }
+            }
+
+            strengthLevel.textContent = strength;
+            strengthLevel.className = className;
+        });
+
+        // Xử lý Validation khi Submit Form
+        form.addEventListener('submit', function(event) {
+            const pwd = passwordInput.value;
+            const hasLetters = /[a-zA-Z]/.test(pwd);
+            const hasNumbers = /[0-9]/.test(pwd);
+
+            // 2. Password must contain numbers and letters
+            if (!hasLetters || !hasNumbers) {
+                event.preventDefault(); // Ngăn form submit
+                alert('Vui lòng nhập mật khẩu chứa cả chữ cái và số!');
+                return;
+            }
+
+            // 2. Image file must be JPG or PNG (Kiểm tra lớp bảo vệ thứ 2 bằng JS)
+            const file = profilePicInput.files[0];
+            if (file) {
+                const fileType = file.type;
+                if (fileType !== 'image/jpeg' && fileType !== 'image/png') {
+                    event.preventDefault();
+                    alert('Ảnh đại diện chỉ được chấp nhận định dạng JPG hoặc PNG!');
+                    return;
+                }
+            }
+
+            // Nếu vượt qua hết validation
+            alert('Đăng ký thành công!');
+        });
+    </script>
+</body>
+</html>
