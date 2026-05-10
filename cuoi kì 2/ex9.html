@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Showcase</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 40px;
+            background-color: #f4f4f9;
+        }
+
+        .controls {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        button:hover {
+            background-color: #218838;
+        }
+
+        /* Yêu cầu 1: Lưới hiển thị 4 sản phẩm bằng CSS Grid */
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr); /* 4 cột bằng nhau */
+            gap: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* Responsive: Tự động thu nhỏ số cột trên màn hình nhỏ */
+        @media (max-width: 900px) {
+            .product-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+        @media (max-width: 600px) {
+            .product-grid { grid-template-columns: 1fr; }
+        }
+
+        /* Yêu cầu 4: Thêm box-shadow và hiệu ứng chuyển động */
+        .product-card {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* box-shadow mặc định */
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        /* Yêu cầu 4: Hiệu ứng Hover (nổi lên và đổ bóng đậm hơn) */
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 12px 20px rgba(0, 0, 0, 0.2); 
+        }
+
+        .product-name {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .product-price {
+            font-size: 1.5rem;
+            color: #e44d26;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .product-desc {
+            color: #666;
+            line-height: 1.5;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="controls">
+        <button onclick="togglePrice()">Toggle Price</button>
+    </div>
+
+    <div class="product-grid">
+        
+        <div class="product-card">
+            <div class="product-name">AlphaPhone&reg; Pro</div>
+            <div class="product-price price-element">&euro;899</div>
+            <div class="product-desc">The ultimate smartphone experience. Learn more &rarr;</div>
+        </div>
+
+        <div class="product-card">
+            <div class="product-name">SoundMax&reg; Earbuds</div>
+            <div class="product-price price-element">&euro;129</div>
+            <div class="product-desc">Noise-cancelling wireless earbuds. Buy now &rarr;</div>
+        </div>
+
+        <div class="product-card">
+            <div class="product-name">Vision&reg; Smartwatch</div>
+            <div class="product-price price-element">&euro;249</div>
+            <div class="product-desc">Track your fitness accurately. See specs &rarr;</div>
+        </div>
+
+        <div class="product-card">
+            <div class="product-name">UltraBook&reg; Air</div>
+            <div class="product-price price-element">&euro;1200</div>
+            <div class="product-desc">Thin, light, and extremely powerful. Order today &rarr;</div>
+        </div>
+
+    </div>
+
+    <script>
+        // Yêu cầu 5: Hàm togglePrice sử dụng getElementsByClassName()
+        function togglePrice() {
+            // Lấy toàn bộ các phần tử đang hiển thị giá tiền
+            const prices = document.getElementsByClassName('price-element');
+            
+            // Duyệt qua danh sách các phần tử
+            for (let i = 0; i < prices.length; i++) {
+                // Kiểm tra trạng thái hiện tại: nếu đang ẩn thì hiện lên, nếu đang hiện thì ẩn đi
+                if (prices[i].style.display === 'none') {
+                    prices[i].style.display = 'block';
+                } else {
+                    prices[i].style.display = 'none';
+                }
+            }
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Exercise 5: Tabbed Content</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    margin: 40px;
+  }
+
+  /* Style cho khu vực chứa các tabs */
+  .tab-container {
+    border-bottom: 2px solid #ccc;
+    display: flex;
+    gap: 5px;
+  }
+
+  /* Style cho trạng thái inactive (mặc định) của tabs */
+  .tab-button {
+    background-color: #f1f1f1;
+    border: 1px solid #ccc;
+    border-bottom: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px 5px 0 0;
+    transition: background-color 0.3s;
+    display: flex;
+    align-items: center;
+  }
+
+  .tab-button:hover {
+    background-color: #ddd;
+  }
+
+  /* Ẩn mũi tên mặc định */
+  .tab-button .arrow {
+    display: none;
+    margin-left: 8px;
+  }
+
+  /* Style cho trạng thái active của tabs */
+  .tab-button.active {
+    background-color: #fff;
+    font-weight: bold;
+    border-bottom: 2px solid #fff;
+    margin-bottom: -2px; /* Đè lên viền dưới của container */
+  }
+
+  /* Hiển thị mũi tên (→) khi tab đang active */
+  .tab-button.active .arrow {
+    display: inline;
+  }
+
+  /* Style cho nội dung của tabs */
+  .tab-content {
+    display: none; /* Ẩn nội dung mặc định */
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-top: none;
+    background-color: #fff;
+  }
+
+  /* Hiển thị nội dung khi có class active */
+  .tab-content.active {
+    display: block;
+  }
+</style>
+</head>
+<body>
+
+  <div class="tab-container">
+    <button class="tab-button active" onclick="switchTab(event, 'features')">
+      Features ® <span class="arrow">→</span>
+    </button>
+    <button class="tab-button" onclick="switchTab(event, 'pricing')">
+      Pricing € <span class="arrow">→</span>
+    </button>
+    <button class="tab-button" onclick="switchTab(event, 'reviews')">
+      Reviews <span class="arrow">→</span>
+    </button>
+    <button class="tab-button" onclick="switchTab(event, 'support')">
+      Support <span class="arrow">→</span>
+    </button>
+  </div>
+
+  <div id="features" class="tab-content active">
+    <h3>Features ®</h3>
+    <p>Đây là nội dung của phần Features. Sản phẩm có nhiều tính năng nổi bật.</p>
+  </div>
+
+  <div id="pricing" class="tab-content">
+    <h3>Pricing €</h3>
+    <p>Đây là nội dung của phần Pricing. Bảng giá được cập nhật mới nhất.</p>
+  </div>
+
+  <div id="reviews" class="tab-content">
+    <h3>Reviews</h3>
+    <p>Đây là nội dung của phần Reviews. Đọc đánh giá từ khách hàng của chúng tôi.</p>
+  </div>
+
+  <div id="support" class="tab-content">
+    <h3>Support</h3>
+    <p>Đây là nội dung của phần Support. Liên hệ với chúng tôi để được hỗ trợ.</p>
+  </div>
+
+  <script>
+    // Yêu cầu 4: Sử dụng hàm switchTab()
+    function switchTab(event, tabId) {
+      
+      // Bước 1: Ẩn tất cả các nội dung (tab-content)
+      const contents = document.querySelectorAll('.tab-content');
+      contents.forEach(content => {
+        content.classList.remove('active'); // Sử dụng classList.remove()
+      });
+
+      // Bước 2: Bỏ trạng thái active của tất cả các nút (tab-button)
+      const buttons = document.querySelectorAll('.tab-button');
+      buttons.forEach(button => {
+        button.classList.remove('active'); // Sử dụng classList.remove()
+      });
+
+      // Bước 3: Hiển thị nội dung của tab được click
+      document.getElementById(tabId).classList.add('active'); // Sử dụng classList.add()
+
+      // Bước 4: Thêm trạng thái active cho nút vừa được click
+      event.currentTarget.classList.add('active'); // Sử dụng classList.add()
+    }
+  </script>
+
+</body>
+</html>
